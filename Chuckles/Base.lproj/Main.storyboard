@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,11 +704,91 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW5-8Q-EiZ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="gYp-xj-o6g">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" continuousSpellChecking="YES" linkDetection="YES" dataDetection="YES" smartInsertDelete="YES" id="GaK-fj-SmB">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="232"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="480" height="232"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <string key="content">Past Prologue
+
+September 15th, 1999
+https://deepspacenine.wiki.net
+
+http://www.google.com
+
+123 Normal Ave, Normal Il.
+
+Tomorrow at 5pm</string>
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="tf0-8j-Rgh"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="uUc-0D-psh">
+                                    <rect key="frame" x="464" y="0.0" width="16" height="232"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dhn-G5-cXO">
+                                <rect key="frame" x="161" y="238" width="158" height="18"/>
+                                <buttonCell key="cell" type="check" title="Enable Data Detectors" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="oKN-SM-PnA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleDataHighlights:" target="XfG-lQ-9wD" id="bBQ-Dj-sBz"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-v4-qAO">
+                                <rect key="frame" x="422" y="235" width="38" height="23"/>
+                                <buttonCell key="cell" type="roundTextured" title="Edit" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MxF-tU-BvQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.editing" id="qms-OC-hAH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="PW5-8Q-EiZ" secondAttribute="bottom" id="0v0-es-uGS"/>
+                            <constraint firstItem="PW5-8Q-EiZ" firstAttribute="top" secondItem="Dhn-G5-cXO" secondAttribute="bottom" constant="8" id="5GJ-3w-JMF"/>
+                            <constraint firstAttribute="trailing" secondItem="dVx-v4-qAO" secondAttribute="trailing" constant="20" id="JVe-tt-vZL"/>
+                            <constraint firstItem="PW5-8Q-EiZ" firstAttribute="centerX" secondItem="Dhn-G5-cXO" secondAttribute="centerX" id="LMu-Wv-LGb"/>
+                            <constraint firstItem="Dhn-G5-cXO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="ebL-7e-6Se"/>
+                            <constraint firstItem="Dhn-G5-cXO" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="mtz-GP-Djm"/>
+                            <constraint firstItem="PW5-8Q-EiZ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="oWP-df-kf5"/>
+                            <constraint firstItem="dVx-v4-qAO" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="p6t-0A-e9V"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="GaK-fj-SmB" id="Tgj-ra-PmO"/>
+                        <outlet property="toggleButton" destination="Dhn-G5-cXO" id="X2t-QV-aYD"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

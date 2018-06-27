@@ -10,6 +10,13 @@
 
 @interface ViewController : NSViewController
 
+@property (strong) IBOutlet NSTextView *textView;
+@property (strong) IBOutlet NSButton *toggleButton;
+@property (strong) IBOutlet NSButton *editButton;
+@property (readonly, getter=isDataDetectorsEnabled) BOOL dataDetectorsEnabled;
+@property BOOL editing;
+
+- (IBAction)toggleDataHighlights:(id)sender;
 
 @end
 
